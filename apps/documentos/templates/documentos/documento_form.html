@@ -5,7 +5,7 @@
 
 {{ form.errors }}
 
-<form method="post" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form|bootstrap }}
     <button type="submit">Adicionar</button>

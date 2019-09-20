@@ -38,7 +38,7 @@ class HoraExtraEdit(UpdateView):
 class HoraExtraEditBase(UpdateView):
     model = RegistroHoraExtra
     form_class = RegistroHoraExtraForm
-    success_url = reverse_lazy('update_hora_extra_base')
+    success_url = reverse_lazy('list_hora_extra')
 
     # def get_success_url(self):
     #     return reverse_lazy('update_hora_extra_base', args=[self.object.id])

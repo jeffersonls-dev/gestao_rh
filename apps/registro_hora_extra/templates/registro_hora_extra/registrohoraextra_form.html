@@ -19,9 +19,14 @@ Edit
 
     {% endif %}
 
-    <button onclick="utilizouHoraExtra({{ object.id }})" class="btn btn-info" type="button">
-    Marcar como utilizada
+    <button onclick="utilizouHoraExtra({{ object.id }})" class="btn btn-info" type="button" >
+        {% if object.utilizada is True %}
+        Marcar Hora Extra Não Utilizada
+        {% else %}
+        Marcar Hora Extra Utilizada
+        {% endif %}
     </button>
+
 </form>
 <br>
 

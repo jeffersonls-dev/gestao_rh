@@ -8,7 +8,7 @@ from django.views.generic import (
     DeleteView,
     CreateView
 )
-from django.views.generic.base import View
+from django.views.generic.base import View, TemplateView
 from reportlab.pdfgen import canvas
 from django.template.loader import get_template
 import xhtml2pdf.pisa as pisa
@@ -106,3 +106,6 @@ class Pdf(View):
             'request': request
         }
         return Render.render('funcionarios/relatorio.html', params, 'myfile')
+
+class PdfDebug(TemplateView):
+    template_name = 'funcionarios/relatorio.html'

@@ -113,7 +113,7 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'jefferson.ls563@gmail.com'
+EMAIL_HOST = 'smtp.office365.com'
+EMAIL_HOST_USER = 'jefferson-ls1@hotmail.com'
 EMAIL_HOST_PASSWORD = 'G@leg07112'
 EMAIL_PORT = 587

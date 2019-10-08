@@ -115,5 +115,5 @@ CELERY_TASK_SERIALIZER = 'json'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.office365.com'
 EMAIL_HOST_USER = 'jefferson-ls1@hotmail.com'
-EMAIL_HOST_PASSWORD = 'G@leg07112'
+EMAIL_HOST_PASSWORD = 'Dev#Edge19'
 EMAIL_PORT = 587

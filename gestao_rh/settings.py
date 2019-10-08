@@ -6,7 +6,7 @@ SECRET_KEY = 'wmy(n$=uo7%d%b23_ah)q+ywi-f6d!y%2d4pvp5ctf6c8su)c$'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.231.19.95','127.0.0.1',]
+ALLOWED_HOSTS = ['18.231.19.95','127.0.0.1', 'localhost',]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -111,3 +111,9 @@ CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'jefferson.ls563@gmail.com'
+EMAIL_HOST_PASSWORD = 'G@leg07112'
+EMAIL_PORT = 587

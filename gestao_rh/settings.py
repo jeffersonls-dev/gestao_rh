@@ -9,7 +9,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['18.231.19.95',
                  '127.0.0.1',
                  'localhost',
-                 'franciscao.com.br',
+                 'clinica.franciscao.com.br',
 ]
 
 INSTALLED_APPS = [

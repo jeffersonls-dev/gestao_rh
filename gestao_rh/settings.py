@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'bootstrapform',
     'django_celery_results',
     'django_celery_beat',
+    'apps.app_antiga',
 ]
 
 MIDDLEWARE = [
@@ -66,7 +67,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'antigo': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'dbantigo.sqlite3'),
     }
+
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -122,3 +128,5 @@ EMAIL_HOST = 'smtp.office365.com'
 EMAIL_HOST_USER = 'jefferson-ls1@hotmail.com'
 EMAIL_HOST_PASSWORD = 'Dev#Edge19'
 EMAIL_PORT = 587
+
+DATABASE_ROUTERS = ['gestao_rh.DBRoutes.DBRoutes']

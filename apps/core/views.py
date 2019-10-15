@@ -13,10 +13,10 @@ def home(request):
     data = {}
     data['usuario'] = request.user
     funcionario = request.user.funcionario
-    data['total_funcionarios'] = funcionario.empresa.total_funcionarios
-    data['total_funcionarios_ferias'] = funcionario.empresa.total_funcionarios_ferias
-    data['total_funcionarios_doc_pendente'] = funcionario.empresa.total_funcionarios_doc_pendente
-    data['total_funcionarios_doc_ok'] = funcionario.empresa.total_funcionarios_doc_ok
+    data['total_funcionarios'] = funcionario.empresa.total_funcionarios or 0
+    data['total_funcionarios_ferias'] = funcionario.empresa.total_funcionarios_ferias or 0
+    data['total_funcionarios_doc_pendente'] = funcionario.empresa.total_funcionarios_doc_pendente or 0
+    data['total_funcionarios_doc_ok'] = funcionario.empresa.total_funcionarios_doc_ok or 0
     data['total_hora_extra_utilizadas'] = RegistroHoraExtra.objects.filter(
         funcionario__empresa=funcionario.empresa, utilizada=True).aggregate(Sum('horas'))['horas__sum'] or 0
     data['total_hora_extra_pendente'] = RegistroHoraExtra.objects.filter(

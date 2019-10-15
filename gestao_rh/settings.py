@@ -123,6 +123,6 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
 
-DATABASE_ROUTERS = ['gestao_rh.DBRoutes.DBRoutes']
+# DATABASE_ROUTERS = ['gestao_rh.DBRoutes.DBRoutes']
 
 from .local_settings import *

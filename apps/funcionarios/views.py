@@ -12,6 +12,7 @@ from django.views.generic.base import View, TemplateView
 from reportlab.pdfgen import canvas
 from django.template.loader import get_template
 import xhtml2pdf.pisa as pisa
+from django.utils.translation import ugettext_lazy as _
 
 
 
@@ -20,6 +21,11 @@ from .models import Funcionario
 
 class FuncionariosList(ListView):
     model = Funcionario
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['report_button'] = _("Employee report")
+        return context
 
     def get_queryset(self):
         empresa_logada = self.request.user.funcionario.empresa

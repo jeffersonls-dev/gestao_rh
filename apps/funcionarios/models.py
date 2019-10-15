@@ -14,6 +14,7 @@ class Funcionario(models.Model):
     empresa = models.ForeignKey(
         Empresa, on_delete=models.PROTECT, null=True, blank=True)
     imagem = models.ImageField()
+    de_ferias = models.BooleanField(default=False)
 
     def get_absolute_url(self):
         return reverse('list_funcionarios')
@@ -21,6 +22,12 @@ class Funcionario(models.Model):
     @property
     def total_horas_extra(self):
         total = self.registrohoraextra_set.filter(utilizada=False).aggregate(
+            Sum('horas'))['horas__sum']
+        return total or 0
+
+    @property
+    def total_horas_extra_utilizada(self):
+        total = self.registrohoraextra_set.filter(utilizada=True).aggregate(
             Sum('horas'))['horas__sum']
         return total or 0
 
